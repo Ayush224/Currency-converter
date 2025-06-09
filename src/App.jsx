@@ -32,7 +32,7 @@ function App() {
     <>
       <div className="h-screen text-5xl font-bold text-white drop-shadow-lg tracking-wide text-center py-10 bg-black/30 backdrop-blur-sm bg-[url(/src/assets/currency.avif)] bg-cover bg-center uppercase">
         Currency converter
-        <div className="flex flex-col flex-wrap mx-auto lg:ml-35 justify-center h-full max-w-md text-green-500">
+        <div className="flex flex-col flex-wrap mx-5 sm:mx-auto lg:ml-35 justify-center h-full max-w-md text-green-500">
           <form
             onSubmit={(e) => {
               e.preventDefault();
