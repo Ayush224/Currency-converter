@@ -4,7 +4,7 @@ const Input = ({
   label,
   amount,
   onAmountChange,
-  currency = 'usd',
+  currency = "usd",
   onCurChange,
   options = [],
 }) => {
@@ -21,7 +21,7 @@ const Input = ({
           className="outline-none w-full bg-transparent py-1.5"
           id={id}
           value={amount}
-          onChange={(e) => onAmountChange(Number(e.target.value))}
+          onChange={(e) => onAmountChange(e.target.value)}
         />
       </div>
       <div className="w-1/2 flex flex-wrap justify-end text-right">
@@ -31,14 +31,23 @@ const Input = ({
           onChange={(e) => onCurChange(e.target.value)}
           className="rounded-lg px-1 py-1 bg-gray-100 cursor-pointer outline-none"
         >
-            {
-                options.map((currency)=> (
-                    <option key={currency} value={currency}>
-                        {currency}
-                    </option>
-                ))
-            }
+          {options.map((currency) => (
+            <option key={currency} value={currency}>
+              {currency}
+            </option>
+          ))}
         </select>
+        <img
+          src={`https://flagsapi.com/${currency
+            .slice(0, 2)
+            .toUpperCase()}/flat/64.png`}
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = "/src/assets/globe.png";
+          }}
+          alt="flag"
+          width={30}
+        />
       </div>
     </div>
   );
